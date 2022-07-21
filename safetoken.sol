@@ -40,7 +40,7 @@ abstract contract Tokenomics {
     address internal burnAddress = 0x000000000000000000000000000000000000dEaD;
 
  
-    address internal tipToTheDev = 0xe6708d1352e0a09Af0E43F3a89d9BE9E01734eE4;
+    
 
     enum FeeType { Antiwhale, Burn, Liquidity, Rfi, External, ExternalToETH }
     struct Fee {
@@ -71,8 +71,7 @@ abstract contract Tokenomics {
         _addFee(FeeType.External, 20, charityAddress );
         _addFee(FeeType.External, 30, marketingAddress );
 
-        // 0.1% as a tip to the dev; feel free to remove this!
-        _addFee(FeeType.ExternalToETH, 1, tipToTheDev );
+       
     }
 
     function _getFeesCount() internal view returns (uint256){ return fees.length; }
